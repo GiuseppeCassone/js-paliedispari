@@ -29,15 +29,15 @@ buttonEl.addEventListener("click",
 
 // Inzializzo una funzione per generare un numero random per il pc
         function computerChoice() {
-
             return Math.floor(Math.random() * 5) + 1;
            
         }
 
         let computerNumber = computerChoice();
-        console.log(computerNumber);
-        console.log(userNumber);
-
+        
+        document.getElementById(`user`).innerHTML = userNumber;
+        document.getElementById(`computer`).innerHTML = computerNumber;
+        
 // Sommo il numero scelto dall'utente e dal pc
         let sum = userNumber + computerNumber;
         console.log(sum);
@@ -55,13 +55,12 @@ buttonEl.addEventListener("click",
             }
 
         }
-
-// Stabilisco se l'utente ha vinto o perso 
-        if(userChoice === check()){
-
-            console.log("Hai vinto");
+        
+        // Stabilisco se l'utente ha vinto o perso 
+        if(userChoice == check()){        
+            document.getElementById(`result`).innerHTML = "Hai vinto";
         
         }else {
-            console.log("Hai perso");
+            document.getElementById(`result`).innerHTML = "Hai perso";
         }
 })
